@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - ESSYTEL</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span class="plate">🍽️</span>
+                        <span class="signal">📶</span>
+                    </div>
+                    <h1><a href="index.html">ESSYTEL</a></h1>
+                </div>
+            </div>
+            <nav class="navigation">
+                <span class="nav-link">Table #<span id="table-number">12</span></span>
+                <button class="cart-btn" onclick="toggleCart()">
+                    Cart (<span id="cart-count">0</span>)
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Order Interface -->
+    <main class="order-main">
+        <div class="container">
+            <!-- AI Response Area -->
+            <div class="ai-response" id="ai-response">
+                <div class="ai-message">
+                    <span class="ai-icon">🤖</span>
+                    <p>Welcome! I'm here to help you with your order. What would you like to try today?</p>
+                </div>
+            </div>
+
+            <!-- 3D Menu Scene -->
+            <div class="menu-scene-container">
+                <div id="menu-scene"></div>
+                <div class="scene-controls">
+                    <button class="control-btn" onclick="rotateScene('left')">↺</button>
+                    <button class="control-btn" onclick="resetView()">Reset View</button>
+                    <button class="control-btn" onclick="rotateScene('right')">↻</button>
+                </div>
+            </div>
+
+            <!-- Menu Categories -->
+            <div class="menu-categories">
+                <button class="category-btn active" onclick="showCategory('all')">All Items</button>
+                <button class="category-btn" onclick="showCategory('appetizers')">Appetizers</button>
+                <button class="category-btn" onclick="showCategory('mains')">Main Courses</button>
+                <button class="category-btn" onclick="showCategory('drinks')">Drinks</button>
+                <button class="category-btn" onclick="showCategory('desserts')">Desserts</button>
+            </div>
+
+            <!-- Menu Items Grid -->
+            <div class="menu-grid" id="menu-grid">
+                <!-- Menu items will be loaded here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Cart Sidebar -->
+        <div class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-header">
+                <h3>Your Order</h3>
+                <button class="close-cart" onclick="toggleCart()">×</button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be added here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    Total: KSH <span id="cart-total">0</span>
+                </div>
+                <button class="btn btn-primary" onclick="placeOrder()">Place Order</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Order Confirmation Modal -->
+    <div class="modal" id="order-modal">
+        <div class="modal-content">
+            <h3>Order Confirmed! 🎉</h3>
+            <p id="order-confirmation-message">Thank you for your order! Your delicious meal is being prepared.</p>
+            <button class="btn btn-primary" onclick="closeModal()">Continue</button>
+        </div>
+    </div>
+
+    <script src="order.js"></script>
+</body>
+</html>

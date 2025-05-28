@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Login - ESSYTEL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span class="plate">🍽️</span>
+                        <span class="signal">📶</span>
+                    </div>
+                    <h1><a href="index.html">ESSYTEL</a></h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login Section -->
+    <main class="auth-main">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="tab-btn active" onclick="showTab('login')">Sign In</button>
+                    <button class="tab-btn" onclick="showTab('register')">Register Hotel</button>
+                </div>
+
+                <!-- Login Form -->
+                <div class="auth-form" id="login-form">
+                    <h2>Hotel Sign In</h2>
+                    <form onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label for="login-email">Email or Phone</label>
+                            <input type="text" id="login-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                    </form>
+                </div>
+
+                <!-- Registration Form -->
+                <div class="auth-form hidden" id="register-form">
+                    <h2>Register Your Hotel</h2>
+                    <form onsubmit="handleRegister(event)">
+                        <div class="form-group">
+                            <label for="hotel-name">Hotel Name</label>
+                            <input type="text" id="hotel-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotel-email">Hotel Email</label>
+                            <input type="email" id="hotel-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotel-phone">Phone Number</label>
+                            <input type="tel" id="hotel-phone" placeholder="+254..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotel-location">Location</label>
+                            <input type="text" id="hotel-location" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotel-password">Password</label>
+                            <input type="password" id="hotel-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" id="confirm-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register Hotel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="auth.js"></script>
+</body>
+</html>

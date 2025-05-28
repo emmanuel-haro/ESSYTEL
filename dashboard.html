@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Dashboard - ESSYTEL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span class="plate">🍽️</span>
+                        <span class="signal">📶</span>
+                    </div>
+                    <h1>ESSYTEL Dashboard</h1>
+                </div>
+            </div>
+            <nav class="navigation">
+                <span class="nav-link" id="hotel-name">Loading...</span>
+                <button class="nav-link" onclick="logout()">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Dashboard Main -->
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Dashboard Navigation -->
+            <div class="dashboard-nav">
+                <button class="nav-btn active" onclick="showSection('orders')">Orders</button>
+                <button class="nav-btn" onclick="showSection('menu')">Menu Management</button>
+                <button class="nav-btn" onclick="showSection('analytics')">Analytics</button>
+            </div>
+
+            <!-- Orders Section -->
+            <section class="dashboard-section" id="orders-section">
+                <div class="section-header">
+                    <h2>Recent Orders</h2>
+                    <div class="order-stats">
+                        <div class="stat">
+                            <span class="stat-number" id="total-orders">0</span>
+                            <span class="stat-label">Total Orders</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="pending-orders">0</span>
+                            <span class="stat-label">Pending</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">KSH <span id="daily-revenue">0</span></span>
+                            <span class="stat-label">Today's Revenue</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="orders-list" id="orders-list">
+                    <!-- Orders will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Menu Management Section -->
+            <section class="dashboard-section hidden" id="menu-section">
+                <div class="section-header">
+                    <h2>Menu Management</h2>
+                    <button class="btn btn-primary" onclick="showAddItemForm()">Add New Item</button>
+                </div>
+                
+                <!-- Add Item Form -->
+                <div class="add-item-form hidden" id="add-item-form">
+                    <h3>Add New Menu Item</h3>
+                    <form onsubmit="addMenuItem(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="item-name">Item Name</label>
+                                <input type="text" id="item-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="item-price">Price (KSH)</label>
+                                <input type="number" id="item-price" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-description">Description</label>
+                            <textarea id="item-description" rows="3" required></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="item-category">Category</label>
+                                <select id="item-category" required>
+                                    <option value="appetizers">Appetizers</option>
+                                    <option value="mains">Main Courses</option>
+                                    <option value="drinks">Drinks</option>
+                                    <option value="desserts">Desserts</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="item-image">Image URL</label>
+                                <input type="url" id="item-image">
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" onclick="hideAddItemForm()">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Add Item</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="menu-items-grid" id="menu-items-grid">
+                    <!-- Menu items will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section class="dashboard-section hidden" id="analytics-section">
+                <div class="section-header">
+                    <h2>Analytics</h2>
+                </div>
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3>Popular Items</h3>
+                        <div id="popular-items">
+                            <!-- Popular items will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Revenue Trend</h3>
+                        <div class="revenue-chart">
+                            <div class="chart-placeholder">📈 Revenue trending upward!</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

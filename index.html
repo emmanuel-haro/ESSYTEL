@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESSYTEL - 3D AI Hotel Order Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span class="plate">🍽️</span>
+                        <span class="signal">📶</span>
+                    </div>
+                    <h1>ESSYTEL</h1>
+                </div>
+            </div>
+            <nav class="navigation">
+                <a href="login.html" class="nav-link">Hotel Dashboard</a>
+                <a href="order.html" class="nav-link">Order Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Welcome to the Future of<br><span class="gradient-text">Hotel Dining</span></h2>
+                <p class="hero-description">
+                    Experience seamless, polite, and efficient food ordering through our revolutionary 3D interface. 
+                    No more waiting for staff – just delightful service at your fingertips.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="startOrdering()">
+                        Start Ordering 
+                        <span class="arrow">→</span>
+                    </button>
+                    <a href="login.html" class="btn btn-outline">Hotel Sign-In</a>
+                </div>
+            </div>
+            
+            <!-- 3D Scene Container -->
+            <div class="scene-container">
+                <div id="hero-scene"></div>
+                <div class="scene-overlay">
+                    <div class="floating-menu">
+                        <div class="menu-item">🍕 Pizza</div>
+                        <div class="menu-item">🥗 Salad</div>
+                        <div class="menu-item">🍷 Wine</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h3 class="section-title">Why Choose ESSYTEL?</h3>
+            <p class="section-subtitle">Revolutionary technology meets exceptional hospitality</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🍳</div>
+                    <h4>3D Interactive Menu</h4>
+                    <p>Browse dishes in stunning 3D. See exactly what you're ordering with immersive visuals.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Instant Service</h4>
+                    <p>No more waiting for staff. Place orders instantly with polite AI assistance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h4>Perfect Experience</h4>
+                    <p>Every interaction is designed to be polite, efficient, and memorable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience">
+        <div class="container">
+            <h3 class="experience-title">Experience the Magic</h3>
+            <p class="experience-subtitle">Step into our 3D dining environment where technology meets hospitality</p>
+            
+            <div class="experience-demo">
+                <div class="demo-steps">
+                    <div class="step">🍽️</div>
+                    <div class="arrow">→</div>
+                    <div class="step">🍷</div>
+                    <div class="arrow">→</div>
+                    <div class="step">⭐</div>
+                </div>
+                <p class="demo-text">Browse • Order • Enjoy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon small">
+                        <span class="plate">🍽️</span>
+                    </div>
+                    <h4>ESSYTEL</h4>
+                </div>
+                <p>Revolutionizing hotel dining across Kenya, one order at a time.</p>
+                <p class="copyright">© 2024 ESSYTEL. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
